@@ -71,6 +71,16 @@ For Claude Code:
 claude mcp add reaper -- node /Users/atticus/Documents/code/atticusofsparta/reaper-mcp/dist/index.js
 ```
 
+## Skill, helpers and tools
+
+- **`skills/reaper/SKILL.md`**: the working method and the bridge's quirks (void-return errors,
+  timeouts, dialogs, renders that never overwrite, master-fader drift), plus Surge patches by name, MPE
+  breath, arrangement-as-code and verification. Linked into `~/.claude/skills/reaper`.
+- **`lua/helpers/`**: ReaScripts for what the tools don't cover (`load_surge_patch`, `write_midi`,
+  `clear_items`, `stem_check`, `dump_project`). Install with `scripts/install_helpers.sh`, then run via
+  `AddRemoveReaScript` + `Main_OnCommand` (see the skill).
+- **`tools/make_loop.py`**: a render becomes a normalised, seamless wav + ogg game loop.
+
 ## Tools
 
 | Tool | Purpose |
